@@ -19,3 +19,10 @@
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {}
+
+.bg-teal {
+    background-color: #008073 !important;
+}
+.teal-text{
+    color: #008073 !important;
+}
