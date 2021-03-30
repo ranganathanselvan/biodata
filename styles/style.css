@@ -5,6 +5,10 @@
     height: auto;
 }
 
+.main-content{
+    min-height: calc(100vh - 60px);
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {}
 
