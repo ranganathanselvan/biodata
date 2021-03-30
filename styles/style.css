@@ -20,9 +20,19 @@
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {}
 
+.bg-grey {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
 .bg-teal {
     background-color: #008073 !important;
 }
+.cyan-text {
+    color: #0d6efd;
+}
 .teal-text{
     color: #008073 !important;
+}
+.white-text{
+    color: #fff;
 }
