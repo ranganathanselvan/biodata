@@ -25,16 +25,28 @@
 
     <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="#"> About Me </a>
-        <a class="navbar-item" href="#"> Skills </a>
-        <a class="navbar-item" href="#"> Work </a>
-        <a class="navbar-item" href="#"> Projects </a>
-        <a class="navbar-item" href="#"> Contact Me </a>
+        <a class="navbar-item" href="#aboutMe"> About Me </a>
+        <a class="navbar-item" href="#projects"> Projects </a>
+        <a class="navbar-item" href="#footerPage"> Contact Me </a>
       </div>
 
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="field is-grouped">
+            <p class="control">
+            <div class="select is-success">
+              <select id="selectTheme">
+                <option>Select Theme</option>
+                <option>Dark</option>
+                <option>Danger</option>
+                <option>Info</option>
+                <option>Link</option>
+                <option>Primary</option>
+                <option>Success</option>
+                <option>Warning</option>
+              </select>
+            </div>
+            </p>
             <p class="control">
               <a class="button is-primary" id="btnDownload">
                 <span class="icon">
@@ -52,7 +64,7 @@
     <div id="resumeDetails" class="container">
       <div class="columns">
         <div class="column">
-          <div class="card">
+          <div id="aboutMe" class="card">
             <div class="card-content">
               <p class="title has-text-centered has-text-primary">
                 Tamilselvan Ranganathan
@@ -70,12 +82,12 @@
             <footer class="card-footer">
               <p class="card-footer-item">
                 <span>
-                  <a class="has-text-primary" href="https://github.com/ranganathanselvan">GitHub</a>
+                  <a id="github" class="has-text-primary" href="https://github.com/ranganathanselvan">GitHub</a>
                 </span>
               </p>
               <p class="card-footer-item">
                 <span>
-                  <a class="has-text-primary"
+                  <a id="linkedin" class="has-text-primary"
                     href="https://www.linkedin.com/in/tamilselvan-ranganathan-91399622/">LinkedIn</a>
                 </span>
               </p>
@@ -92,10 +104,10 @@
             </div>
             <div class="message-body">
               <p>
+                B.E. in Computer Science and Engineering at
                 <strong>Vel Tech Multitech Dr. RR Dr. SR Engineering
-                  College</strong>
-                in Computer Science and Engineering
-                <strong>(2006 - 2010)</strong>
+                  College</strong> Chennai, India  
+                (2006 - 2010)
               </p>
             </div>
           </article>
@@ -193,7 +205,7 @@
         </div>
       </div>
 
-      <h4 class="title is-4 has-text-primary">Projects</h4>
+      <h4 id="projects" class="title is-4 has-text-primary">Projects</h4>
       <div class="columns">
         <div class="column is-two-thirds">
           <article class="message is-primary">
@@ -293,15 +305,15 @@
     </div>
   </section>
   <section class="section">
-    <footer class="footer">
-      <div class="has-text-centered">
+    <footer id="footerPage" class="footer">
+      <div id="divFooter" class="has-text-centered">
         <p class="has-text-primary">Tamilselvan Ranganathan</p>
         <p class="has-text-primary">Chennai, India</p>
         <button class="button is-small">
           <span class="icon">
             <i class="fas fa-envelope"></i>
           </span>
-          <a class="has-text-primary" href="mailto:ranganathanselvan@gmail.com">Email Me</a>
+          <a id="btnEmailMe" class="has-text-primary" href="mailto:ranganathanselvan@gmail.com">Email Me</a>
         </button>
       </div>
     </footer>
@@ -324,7 +336,156 @@
             jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
           };
           html2pdf().from(resumeDetails).set(opt).save();
-        })
+        });
+
+      $('#selectTheme').change(function () {
+        var theme = $('#selectTheme').val();
+
+        $(".message").removeClass("is-dark");
+        $(".message").removeClass("is-danger");
+        $(".message").removeClass("is-info");
+        $(".message").removeClass("is-link");
+        $(".message").removeClass("is-primary");
+        $(".message").removeClass("is-success");
+        $(".message").removeClass("is-warning");
+
+        $(".title").removeClass("has-text-dark");
+        $(".title").removeClass("has-text-danger");
+        $(".title").removeClass("has-text-info");
+        $(".title").removeClass("has-text-link");
+        $(".title").removeClass("has-text-primary");
+        $(".title").removeClass("has-text-success");
+        $(".title").removeClass("has-text-warning");
+
+        $(".navbar").removeClass("is-dark");
+        $(".navbar").removeClass("is-danger");
+        $(".navbar").removeClass("is-info");
+        $(".navbar").removeClass("is-link");
+        $(".navbar").removeClass("is-primary");
+        $(".navbar").removeClass("is-success");
+        $(".navbar").removeClass("is-warning");
+
+        $("a").removeClass("is-dark");
+        $("a").removeClass("is-danger");
+        $("a").removeClass("is-info");
+        $("a").removeClass("is-link");
+        $("a").removeClass("is-primary");
+        $("a").removeClass("is-success");
+        $("a").removeClass("is-warning");
+
+        $("#github").removeClass("has-text-dark");
+        $("#github").removeClass("has-text-danger");
+        $("#github").removeClass("has-text-info");
+        $("#github").removeClass("has-text-link");
+        $("#github").removeClass("has-text-primary");
+        $("#github").removeClass("has-text-success");
+        $("#github").removeClass("has-text-warning");
+
+        $("#linkedin").removeClass("has-text-dark");
+        $("#linkedin").removeClass("has-text-danger");
+        $("#linkedin").removeClass("has-text-info");
+        $("#linkedin").removeClass("has-text-link");
+        $("#linkedin").removeClass("has-text-primary");
+        $("#linkedin").removeClass("has-text-success");
+        $("#linkedin").removeClass("has-text-warning");
+
+        $("#divFooter p").removeClass("has-text-dark");
+        $("#divFooter p").removeClass("has-text-danger");
+        $("#divFooter p").removeClass("has-text-info");
+        $("#divFooter p").removeClass("has-text-link");
+        $("#divFooter p").removeClass("has-text-primary");
+        $("#divFooter p").removeClass("has-text-success");
+        $("#divFooter p").removeClass("has-text-warning");
+
+        $("#btnEmailMe").removeClass("has-text-dark");
+        $("#btnEmailMe").removeClass("has-text-danger");
+        $("#btnEmailMe").removeClass("has-text-info");
+        $("#btnEmailMe").removeClass("has-text-link");
+        $("#btnEmailMe").removeClass("has-text-primary");
+        $("#btnEmailMe").removeClass("has-text-success");
+        $("#btnEmailMe").removeClass("has-text-warning");
+
+        $(".select").removeClass("is-dark");
+        $(".select").removeClass("is-danger");
+        $(".select").removeClass("is-info");
+        $(".select").removeClass("is-link");
+        $(".select").removeClass("is-primary");
+        $(".select").removeClass("is-success");
+        $(".select").removeClass("is-warning");
+
+        if (theme === "Dark") {
+          $(".message").addClass("is-dark");
+          $(".title").addClass("has-text-dark");
+          $(".navbar").addClass("is-dark");
+          $("a").addClass("is-dark");
+          $("#github").addClass("has-text-dark");
+          $("#linkedin").addClass("has-text-dark");
+          $("#divFooter p").addClass("has-text-dark");
+          $("#btnEmailMe").addClass("has-text-dark");
+          $(".select").addClass("is-dark");
+        } else if (theme === "Danger") {
+          $(".message").addClass("is-danger");
+          $(".title").addClass("has-text-danger");
+          $(".navbar").addClass("is-danger");
+          $("a").addClass("is-danger");
+          $("#github").addClass("has-text-danger");
+          $("#linkedin").addClass("has-text-danger");
+          $("#divFooter p").addClass("has-text-danger");
+          $("#btnEmailMe").addClass("has-text-danger");
+          $(".select").addClass("is-danger");
+        } else if (theme === "Info") {
+          $(".message").addClass("is-info");
+          $(".title").addClass("has-text-info");
+          $(".navbar").addClass("is-info");
+          $("a").addClass("is-info");
+          $("#github").addClass("has-text-info");
+          $("#linkedin").addClass("has-text-info");
+          $("#divFooter p").addClass("has-text-info");
+          $("#btnEmailMe").addClass("has-text-info");
+          $(".select").addClass("is-info");
+        } else if (theme === "Link") {
+          $(".message").addClass("is-link");
+          $(".title").addClass("has-text-link");
+          $(".navbar").addClass("is-link");
+          $("a").addClass("is-link");
+          $("#github").addClass("has-text-link");
+          $("#linkedin").addClass("has-text-link");
+          $("#divFooter p").addClass("has-text-link");
+          $("#btnEmailMe").addClass("has-text-link");
+          $(".select").addClass("is-link");
+        } else if (theme === "Primary") {
+          $(".message").addClass("is-primary");
+          $(".title").addClass("has-text-primary");
+          $(".navbar").addClass("is-primary");
+          $("a").addClass("is-primary");
+          $("#github").addClass("has-text-primary");
+          $("#linkedin").addClass("has-text-primary");
+          $("#divFooter p").addClass("has-text-primary");
+          $("#btnEmailMe").addClass("has-text-primary");
+          $(".select").addClass("is-primary");
+        } else if (theme === "Success") {
+          $(".message").addClass("is-success");
+          $(".title").addClass("has-text-success");
+          $(".navbar").addClass("is-success");
+          $("a").addClass("is-success");
+          $("#github").addClass("has-text-success");
+          $("#linkedin").addClass("has-text-success");
+          $("#divFooter p").addClass("has-text-success");
+          $("#btnEmailMe").addClass("has-text-success");
+          $(".select").addClass("is-success");
+        } else if (theme === "Warning") {
+          $(".message").addClass("is-warning");
+          $(".title").addClass("has-text-warning");
+          $(".navbar").addClass("is-warning");
+          $("a").addClass("is-warning");
+          $("#github").addClass("has-text-warning");
+          $("#linkedin").addClass("has-text-warning");
+          $("#divFooter p").addClass("has-text-warning");
+          $("#btnEmailMe").addClass("has-text-warning");
+          $(".select").addClass("is-warning");
+        }
+
+      });
     }
   </script>
 </body>
