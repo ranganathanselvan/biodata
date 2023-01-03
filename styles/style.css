@@ -1,0 +1,112 @@
+:root {
+    --text-color: black;
+    --bg-color: white;
+    --link-color: blue;
+    --btn-text-color: #ffffff;
+    --btn-bg-color: #f02e65;
+    --toogle-bg-color: #dfe2e4;
+    --header-background-color: #F8F9FA;
+}
+
+.dark-mode {
+    --text-color: white;
+    --bg-color: black;
+    --link-color: lightblue;
+    --btn-text-color: #1c223a;
+    --btn-bg-color: #c7d8eb;
+    --toogle-bg-color: #c7d8eb;
+    --header-background-color: #171D37;
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    font-family: Poppins, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--link-color);
+}
+
+.button {
+    color: var(--btn-text-color);
+    background-color: var(--btn-bg-color);
+    display: inline-block;
+    border-radius: 26px;
+    border: none;
+    height: 52px;
+    line-height: 52px;
+    padding: 0 25px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttonreverse {
+    background: 0 0;
+    height: 50px;
+    line-height: 48px;
+    padding: 0 23px;
+    color: var(--btn-bg-color);
+    border: solid 2px var(--btn-bg-color);
+    border-radius: 26px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    width: 50px;
+    height: 25px;
+    background-color: var(--toogle-bg-color);
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.5);
+}
+
+.ball {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked+.label .ball {
+    transform: translateX(24px);
+}
+
+.fa-moon {
+    color: black;
+  }
+  
+  .fa-sun {
+    color: black;
+  }
+
+.bg-nav-menu{
+    color: var(--btn-bg-color);
+    background-color: var(--header-background-color);
+}
