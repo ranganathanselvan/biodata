@@ -6,6 +6,8 @@
     --btn-bg-color: #f02e65;
     --toogle-bg-color: #dfe2e4;
     --header-background-color: #F8F9FA;
+    --nav-text-color: #f02e65;
+    --header-text-color: #1e849e;
 }
 
 .dark-mode {
@@ -16,6 +18,8 @@
     --btn-bg-color: #c7d8eb;
     --toogle-bg-color: #c7d8eb;
     --header-background-color: #171D37;
+    --nav-text-color: #c7d8eb;
+    --header-text-color: #4caedb;
 }
 
 body {
@@ -23,10 +27,6 @@ body {
     background-color: var(--bg-color);
     font-family: Poppins, sans-serif;
     -webkit-font-smoothing: antialiased;
-}
-
-a {
-    color: var(--link-color);
 }
 
 .button {
@@ -64,14 +64,24 @@ a {
     text-overflow: ellipsis;
 }
 
+.a-link{
+    color: var(--btn-bg-color);
+    border: solid 2px var(--btn-bg-color);
+    border-radius: 26px;
+    background: 0 0;
+    height: 50px;
+    padding: 10px 23px;
+    text-decoration: none;
+}
+
 .checkbox {
     opacity: 0;
     position: absolute;
 }
 
 .label {
-    width: 50px;
-    height: 25px;
+    width: 34px;
+    height: 16px;
     background-color: var(--toogle-bg-color);
     display: flex;
     border-radius: 50px;
@@ -83,8 +93,8 @@ a {
 }
 
 .ball {
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
     background-color: white;
     position: absolute;
     top: 2px;
@@ -95,18 +105,80 @@ a {
 
 /*  target the elemenent after the label*/
 .checkbox:checked+.label .ball {
-    transform: translateX(24px);
+    transform: translateX(18px);
 }
 
 .fa-moon {
+    height: 8px;
+    width: 8px;
     color: black;
-  }
-  
-  .fa-sun {
-    color: black;
-  }
+}
 
-.bg-nav-menu{
-    color: var(--btn-bg-color);
+.fa-sun {
+    height: 8px;
+    width: 8px;
+    color: black;
+}
+
+.nav-menu-bg {
     background-color: var(--header-background-color);
 }
+
+.nav-menu-item {
+    color: var(--nav-text-color)!important;
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.nav-menu-active {
+    font-weight: bold;
+}
+
+.nav-menu-brand {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    color: var(--nav-text-color);
+    text-decoration: none;
+    white-space: nowrap;
+    border: solid 2px var(--btn-bg-color);
+    border-radius: 50px;
+}
+
+.text-color {
+    color: var(--nav-text-color);
+}
+
+.header-text-color {
+    color: var(--header-text-color);
+}
+
+.timeline {
+    border-left: 1px solid hsl(0, 0%, 90%);
+    position: relative;
+    list-style: none;
+  }
+  
+  .timeline .timeline-item {
+    position: relative;
+  }
+  
+  .timeline .timeline-item:after {
+    position: absolute;
+    display: block;
+    top: 0;
+  }
+  
+  .timeline .timeline-item:after {
+    background-color: hsl(0, 0%, 90%);
+    left: -38px;
+    border-radius: 50%;
+    height: 11px;
+    width: 11px;
+    content: "";
+  }
