@@ -199,12 +199,25 @@
                         <div class="col-sm-4">
                             <p>
                             <h5>Digital Decline – Print Automation</h5><small>(Feb 2019 - Dev 2019)</small></p>
-                            <p><strong>Project Overview:</strong> Automating the manual post composition process using Inspire Designer and Inspire Scaler. End customer are expecting their proposal, Account Opening form, Brochure and other static document in paper.</p>
-                            <p><strong>Technologies Used:</strong> NodeJS, C#, Web API Core, JavaScript, Inspire Designer, Inspire Scaler</p>
+                            <p><strong>Project Overview:</strong> Automating the manual post composition process using
+                                Inspire Designer and Inspire Scaler. End customer are expecting their proposal, Account
+                                Opening form, Brochure and other static document in paper.</p>
+                            <p><strong>Technologies Used:</strong> NodeJS, C#, Web API Core, JavaScript, Inspire
+                                Designer, Inspire Scaler</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-1"></div>
+            </div>
+        </section>
+        <section id="ads">
+            <div class="row">
+                <div class="col-12">
+                    <!--Begin: Star-Clicks.com HTML Code-->
+                    <script type='text/javascript'
+                        src='https://www.star-clicks.com/secure/ads.php?pid=77821292853333342'></script>
+                    <!-- End: Star-Clicks.com -->
+                </div>
             </div>
         </section>
         <section id="contact" class="py-5">
@@ -230,17 +243,21 @@
     <script>
         const toggleButton = document.getElementById('btntoggle');
 
-        toggleButton.addEventListener('click', () => {
+        toggleButton.addEventListener('click', () =>
+        {
             document.body.classList.toggle('dark-mode');
         });
 
-        function dateDiff(startingDate, endingDate) {
+        function dateDiff(startingDate, endingDate)
+        {
             var startDate = new Date(new Date(startingDate).toISOString().substr(0, 10));
-            if (!endingDate) {
+            if (!endingDate)
+            {
                 endingDate = new Date().toISOString().substr(0, 10);    // need date in YYYY-MM-DD format
             }
             var endDate = new Date(endingDate);
-            if (startDate > endDate) {
+            if (startDate > endDate)
+            {
                 var swap = startDate;
                 startDate = endDate;
                 endDate = swap;
@@ -251,29 +268,37 @@
 
             var yearDiff = endDate.getFullYear() - startYear;
             var monthDiff = endDate.getMonth() - startDate.getMonth();
-            if (monthDiff < 0) {
+            if (monthDiff < 0)
+            {
                 yearDiff--;
                 monthDiff += 12;
             }
             var dayDiff = endDate.getDate() - startDate.getDate();
-            if (dayDiff < 0) {
-                if (monthDiff > 0) {
+            if (dayDiff < 0)
+            {
+                if (monthDiff > 0)
+                {
                     monthDiff--;
-                } else {
+                } else
+                {
                     yearDiff--;
                     monthDiff = 11;
                 }
                 dayDiff += daysInMonth[startDate.getMonth()];
             }
-            if (dayDiff >= 10) {
+            if (dayDiff >= 10)
+            {
                 monthDiff++;
             }
-            if (monthDiff == 12) {
+            if (monthDiff == 12)
+            {
                 yearDiff++;
             }
-            if (monthDiff == 0 || monthDiff == 12) {
+            if (monthDiff == 0 || monthDiff == 12)
+            {
                 return yearDiff + ' Years';
-            } else {
+            } else
+            {
                 return yearDiff + ' years ' + monthDiff + ' months'
             }
         }
